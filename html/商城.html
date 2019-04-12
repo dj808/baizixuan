@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>商城</title>
+
+    <!--weui -->
+    <link rel="stylesheet" type="text/css" href="../css/weui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/weuix.min.css"/>
+    <!--weui 结束-->
+
+    <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+
+    <script src="../js/php.js"></script>
+    <script src="../js/zepto.min.js"></script>
+    <script src="../js/zepto.weui.min.js"></script>
+    <script src="../js/swipe.js"></script>
+    <script src="../js/mock.min.js"></script>
+
+    <script src="../js/app.js"></script>
+    <script>
+
+        var data = {};
+        data.val = 0;   // 默认综合 0：综合 1： 销量 2：价格 3：筛选
+        data.sort = 0;  // 默认综合 0：升序 1： 降序
+
+        var pagesize=15;//每页数据条数
+        var page = 0;
+        var maxpage;
+
+
+        // 滚动底部
+        $(window).scroll(
+            function() {
+
+                var scrollTop = $(this).scrollTop();
+                var scrollHeight = $(document).height();
+                var windowHeight = $(this).height();
+                if (scrollTop + windowHeight == scrollHeight) {
+                    maxpage = sessionStorage['maxpage'];
+                    if(page<=maxpage) {
+                        ajaxpage(page);
+                        page++;
+                        if(page==maxpage){
+                            $("#more").html("没有更多数据了");return false;
+                        }
+                    }
+                }
+
+            }
+        );
+
+        $(function(){
+
+            // 默认加载第一个
+            ajaxpage(0);
+
+
+            $(".search-list").click(function(){
+                data.val = $(this).index();
+                if (data.val  == 2){
+
+                    $(".arr div").eq(data.sort).addClass('action').siblings().removeClass('action');
+                    if (data.sort == 0) {
+                        data.sort = 1;
+                    }else{
+                        data.sort = 0;
+                    }
+                }
+                // console.log($(this).index());
+                $(this).addClass('cur').siblings().removeClass('cur');
+
+            });
+
+
+            //轮播图1
+            $('#slide2').swipeSlide({
+                autoSwipe:true,//自动切换默认是
+                speed:3000,//速度默认4000
+                continuousScroll:true,//默认否
+                transitionType:'cubic-bezier(0.22, 0.69, 0.72, 0.88)',//过渡动画linear/ease/ease-in/ease-out/ease-in-out/cubic-bezier
+                lazyLoad:true,//懒加载默认否
+                firstCallback : function(i,sum,me){
+                    me.find('.dot').children().first().addClass('cur');
+                },
+                callback : function(i,sum,me){
+                    me.find('.dot').children().eq(i).addClass('cur').siblings().removeClass('cur');
+                }
+            });
+
+
+
+        });
+
+
+    </script>
+</head>
+<body>
+<!-- 头部 -->
+<header class="aui-bar aui-bar-nav">
+    <div class="aui-title" style="left:0.75rem; right: 0.75rem;">
+        <div class="aui-searchbar" id="search">
+            <div class="aui-searchbar-input aui-border-radius">
+                <div id="search-input">请输入搜索内容</div>
+                <!--<input type="search" placeholder="请输入搜索内容" id="search-input">-->
+                <i class="aui-iconfont aui-icon-search"></i>
+                <div class="aui-searchbar-clear-btn">
+                    <i class="aui-iconfont aui-icon-close"></i>
+                </div>
+            </div>
+            <div class="aui-searchbar-btn" tapmode>取消</div>
+        </div>
+    </div>
+</header>
+<!-- 筛选 -->
+<div class="goods_screen">
+    <div class="aui-row">
+        <div class="aui-col-xs-4 aui-text-center search-list cur">
+            综合
+        </div>
+        <div class="aui-col-xs-4 aui-text-center search-list">
+            销量
+        </div>
+        <div class="aui-col-xs-4 aui-text-center search-list">
+            <div class="aui-row">
+                <div class="aui-col-xs-8 aui-text-right">
+                    价格
+                </div>
+                <div class="aui-col-xs-4">
+                    <div class="arr">
+                        <div class="arrUp"></div>
+                        <div class="arrDown"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 轮播图 -->
+<div class="aui-content-padded goods_swipe">
+    <div class="aui-bg-white border-radius-1">
+        <div class="aui-header aui-padded-l-10">
+            <div class="aui-info">
+                <div class="aui-info-item">
+                    <img src="../images/8.png" alt="" style="width:1.25rem">
+                    <span class="aui-margin-l-5 aui-font-size-16">商品活动</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="aui-padded-10 aui-padded-t-0">
+            <div class="aui-content">
+                <div class="slide" id="slide2">
+                    <ul>
+                        <li>
+                            <a href="javascript:;">
+                                <img src='../images/31.png' alt="">
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src='../images/31.png' alt="">
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src='../images/31.png' alt="">
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="dot">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 商城商品 -->
+<div class="aui-content-padded goods_swipe">
+    <div class="aui-bg-white border-radius-1">
+        <div class="aui-header aui-padded-l-10">
+            <div class="aui-info">
+                <div class="aui-info-item">
+                    <img src="../images/32.png" alt="" style="width:1.25rem">
+                    <span class="aui-margin-l-5 aui-font-size-16">商品活动</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="aui-padded-10 aui-padded-t-0 aui-padded-r-0" id="goods_list_tpl">
+
+        </div>
+
+        <div class="weui-loadmore" id="more">
+            <i class="weui-loading"></i>
+            <span class="weui-loadmore__tips">正在加载</span>
+        </div>
+    </div>
+</div>
+
+<script id="tpl" type="text/html">
+    <ul class="aui-row">
+        <% for(var i in list) {   %>
+        <li class="aui-col-xs-6 aui-padded-b-10">
+            <div class="aui-padded-r-10">
+
+                <a href="javascript:;" >
+                    <div class="aui-row">
+                        <div class="aui-col-xs-12">
+                            <div class="share_header">
+                                <img alt="" class="lazy" src="<%=list[i].img%>">
+                            </div>
+                        </div>
+                        <div class="aui-col-xs-12">
+                            <p class="share_title"><%=list[i].title%></p>
+                        </div>
+                        <div class="aui-col-xs-6">
+                            <h3>￥<%=list[i].money%></h3>
+                        </div>
+                        <div class="aui-col-xs-6">
+                            <div class="aui-btn aui-btn-sm aui-btn-home">
+                                立即购买
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+
+        </li>
+
+        <% } %>
+    </ul>
+
+</script>
+
+<script>
+
+
+    Mock.mock('http://api.com', {
+        "list|10": [{
+            'img': '../images/33.png',   //中文名称
+            'age|1-100': 100,   //100以内随机整数
+            'title':"贝娜佳--欢乐读书周活动",
+            'money': 225,
+            'date': '@date("yyyy-MM-dd")',  //日期
+            'city': '@city(true)'   //中国城市
+        }],
+        total:20,
+    });
+
+    $('#more').hide();
+    function ajaxpage(page){
+        $.ajax({
+            type : "POST",
+            url : 'http://api.com',
+            data: {"page":page,"pagesize":pagesize,ajax:2},
+            dataType : "json",
+            beforeSend:function(){
+                $("#more").show();
+            },
+            success : function(rs) {
+                console.log(rs);
+
+                $("#goods_list_tpl").append(tpl(document.getElementById('tpl').innerHTML,rs));
+                var maxpage = Math.ceil(rs.total / pagesize);
+                sessionStorage['maxpage'] = maxpage;
+
+            },
+            timeout : 15000
+        });
+    }
+
+
+
+</script>
+
+</body>
+</html>

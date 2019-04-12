@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>登录</title>
+    <!--weui -->
+    <link rel="stylesheet" type="text/css" href="../css/weui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/weuix.min.css"/>
+    <!--weui 结束-->
+
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+
+    <script src="../js/zepto.min.js"></script>
+    <script src="../js/zepto.weui.min.js"></script>
+    <script src="../js/swipe.js"></script>
+    <script src="../js/app.js"></script>
+
+</head>
+<body class="login-bg">
+    <div class="aui-padded-15">
+        <div class="login">
+            <div class="login_table">
+                <div class="aui-tab" id="tab">
+                    <div class="aui-tab-item aui-active">
+                        <span onclick="urlApp('./登录.html')">登录</span>
+                    </div>
+                    <div class="aui-tab-item">
+                        <span onclick="urlApp('./注册.html')">注册</span>
+                    </div>
+                </div>
+            </div>
+            <div class="login_content">
+                <form action="" method="post">
+                    <div class="aui-content-padded">
+                        <div class="aui-row">
+                            <div class="aui-col-xs-12">
+                                <div class="aui-padded-15">
+                                    <input type="text" name="user" placeholder="手机号码" class="input">
+                                </div>
+                            </div>
+                            <div class="aui-col-xs-12">
+                                <div class="aui-padded-15 aui-padded-t-0">
+                                    <input type="password" name="password" placeholder="密码" class="input">
+                                </div>
+                            </div>
+                            <div class="aui-col-xs-6">
+                                <div class="aui-padded-15 aui-padded-t-0 aui-text-666 aui-font-size-14">
+                                    <lable><input type="checkbox" name="autoCheckbox"> 自动登录</lable>
+                                </div>
+                            </div>
+                            <div class="aui-col-xs-6 aui-text-right">
+                                <div class="aui-padded-15 aui-padded-t-0 aui-text-666 aui-font-size-14">
+                                    忘记密码
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aui-content-padded">
+                        <div class="submit">
+                            <input type="submit" class="aui-btn aui-btn-block aui-btn-submit" value="登录">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

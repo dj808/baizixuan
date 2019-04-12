@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>商品详情</title>
+
+    <!--weui -->
+    <link rel="stylesheet" type="text/css" href="../css/weui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/weuix.min.css"/>
+    <!--weui 结束-->
+
+    <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+
+    <script src="../js/php.js"></script>
+    <script src="../js/zepto.min.js"></script>
+    <script src="../js/zepto.weui.min.js"></script>
+    <script src="../js/swipe.js"></script>
+    <script src="../js/vue.js"></script>
+
+    <script src="../js/app.js"></script>
+    <script>
+
+        var MAX = 99, MIN = 1;
+
+        $(function(){
+           
+
+            // popup
+            
+
+            // $("#btn2").click(function(){
+            //     $("#half").popup();
+            // });
+
+            // 数字 +
+            $('.weui-count__decrease').click(function (e) {
+                var $input = $(e.currentTarget).parent().find('.weui-count__number');
+                var number = parseInt($input.val() || "0") - 1
+                if (number < MIN) number = MIN;
+                $input.val(number)
+            });
+
+            // 数字 -
+            $('.weui-count__increase').click(function (e) {
+                var $input = $(e.currentTarget).parent().find('.weui-count__number');
+                var number = parseInt($input.val() || "0") + 1
+                if (number > MAX) number = MAX;
+                $input.val(number);
+            })
+
+
+        })
+
+
+    </script>
+	<style >
+		.myplus{
+			font-size: 0.35rem !important;
+			color: #ec7c3e;
+			border:0.7px solid #ec7c3e;
+			padding:0.1rem;
+			border-radius: 50%;
+			margin-right: 0.25rem;
+			height:1.5rem;
+			vertical-align: middle;
+		}
+		.border-radius-1{
+			border-radius: .25rem;
+		}
+	</style>
+</head>
+<body>
+    <header class="aui-bar aui-bar-nav">
+        <a class="aui-pull-left aui-btn">
+            <span class="aui-iconfont aui-icon-left "></span>
+        </a>
+        <div class="aui-title">确认订单</div>
+    </header>
+
+    <!-- 收货地址 -->
+	<div class="aui-content-padded aui-bg-white border-radius-1" >
+		 <div class="aui-content aui-margin-b-15 aui-padded-t-10 aui-padded-b-10">		
+		            <div class="aui-list-item-inner aui-text-center aui-list-item-arrow">
+		                <div class="aui aui-font-size-14" style="margin:0 auto;">				
+							<i class="aui-iconfont aui-icon-plus myplus"></i>
+							添加收货地址
+						</div>
+						
+		            </div>
+		       
+		        
+		    
+		</div>
+	</div>
+    <!--底部-->
+   
+
+    <div id="half" class='aui-content-padded'>
+        
+        <div class=" aui-bg-white popup-content">
+            <div class="modal-content">
+                <ul class="aui-list aui-media-list aui-padded-15">
+                    <li class="aui-list-item">
+                        <div class="aui-media-list-item-inner">
+                            <div class="aui-list-item-media">
+                                <img src="../images/39.png">
+                            </div>
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-text">
+                                    <div class="aui-list-item-title">y优益贝</div>
+                                </div>
+                                <div class="aui-list-item-text">
+                                    套餐二, 属性二
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="aui-border-t"></div>
+
+                <div class="aui-content-padded">
+                    <div class="title" v-for="item in list">
+                        {{item.name}}
+                        <div class="sp-1">
+                            <ul>
+                                <li v-for="item2 in item.val">
+                                    <div v-bind:class="{on: item2.action}">{{item2.name}}</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="aui-border-t"></div>
+
+                <div class="aui-padded-15">
+                    <div class="aui-row">
+                        <div class="aui-col-xs-8">
+                            数量
+                        </div>
+                        <div class="aui-col-xs-4">
+                            <div class="weui-count">
+                                <a class="weui-count__btn weui-count__decrease aui-pull-left"></a>
+                                <input class="weui-count__number aui-pull-left" type="number" value="1" />
+                                <a class="weui-count__btn weui-count__increase aui-pull-left"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="aui-content-padded">
+                    <div class="btn">
+                        <div class="aui-btn-home aui-btn aui-btn-block">
+                            确认
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	 <footer class="aui-bar aui-bar-tab aui-border-t home"  id="footer">
+	    <div class="aui-bar-tab-item" style="width: 30%;">
+	        <img src="../images/36.png" alt="" class="">
+	        <!--<i class="aui-iconfont aui-icon-comment aui-text-info"></i>-->
+	        <div class="aui-bar-tab-label">商城</div>
+	    </div>
+	    <div class="aui-bar-tab-item" style="width: 70%;">
+	        <div class="bg-img-1 aui-text-white aui-padded-5 aui-margin-r-10">
+	            <img src="../images/37.png" alt="">
+	
+	            <div class="aui-bar-tab-label" data-target="#half" id="btn2">立即购买</div>
+	        </div>
+	    </div>
+	</footer>
+<script>
+    // vue
+    var example = new Vue({
+        el:'#half',
+        data:{
+            list:[
+                {
+                    'name':'套餐类型',
+                    'val':[
+                        {'name':'套餐一文字内容',isAction:true},
+                        {'name':'套餐一文字内容套餐',isAction:false},
+                        {'name':'套餐一文字内容',isAction:false},
+                    ]
+                },
+                {
+                    'name':'属性类型',
+                    'val':[
+                        {'name':'属性一文字内容',isAction:true},
+                        {'name':'属性二内容',isAction:false}
+                    ]
+                }
+            ],
+
+        },
+        methods:{
+            actClick: function(event){
+                console.log(event);
+            }
+        }
+
+    })
+</script>
+</body>
+</html>

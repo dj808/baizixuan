@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>商品详情</title>
+
+    <!--weui -->
+    <link rel="stylesheet" type="text/css" href="../css/weui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/weuix.min.css"/>
+    <!--weui 结束-->
+
+    <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+
+    <script src="../js/php.js"></script>
+    <script src="../js/zepto.min.js"></script>
+    <script src="../js/zepto.weui.min.js"></script>
+    <script src="../js/swipe.js"></script>
+    <script src="../js/vue.js"></script>
+
+    <script src="../js/app.js"></script>
+    <script>
+
+        var MAX = 99, MIN = 1;
+
+        $(function(){
+            $('#slide2').swipeSlide({
+                autoSwipe:true,//自动切换默认是
+                speed:3000,//速度默认4000
+                continuousScroll:true,//默认否
+                transitionType:'cubic-bezier(0.22, 0.69, 0.72, 0.88)',//过渡动画linear/ease/ease-in/ease-out/ease-in-out/cubic-bezier
+                lazyLoad:true,//懒加载默认否
+                firstCallback : function(i,sum,me){
+                    me.find('.dot').children().first().addClass('cur');
+                },
+                callback : function(i,sum,me){
+                    me.find('.dot').children().eq(i).addClass('cur').siblings().removeClass('cur');
+                }
+            });
+
+            // popup
+            $("#half").popup();
+
+            // $("#btn2").click(function(){
+            //     $("#half").popup();
+            // });
+
+            // 数字 +
+            $('.weui-count__decrease').click(function (e) {
+                var $input = $(e.currentTarget).parent().find('.weui-count__number');
+                var number = parseInt($input.val() || "0") - 1
+                if (number < MIN) number = MIN;
+                $input.val(number)
+            });
+
+            // 数字 -
+            $('.weui-count__increase').click(function (e) {
+                var $input = $(e.currentTarget).parent().find('.weui-count__number');
+                var number = parseInt($input.val() || "0") + 1
+                if (number > MAX) number = MAX;
+                $input.val(number);
+            })
+
+
+        })
+
+
+    </script>
+</head>
+<body>
+    <header class="aui-bar aui-bar-nav">
+        <a class="aui-pull-left aui-btn">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">商品详情</div>
+    </header>
+
+    <!--轮播图-->
+    <div class="slide" id="slide2">
+        <ul>
+            <li>
+                <a href="javascript:;">
+                    <img src='../images/34.png' alt="">
+                </a>
+
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src='../images/34.png' alt="">
+                </a>
+
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src='../images/34.png' alt="">
+                </a>
+
+            </li>
+        </ul>
+        <div class="dot">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!---->
+    <div class="aui-padded-15 aui-bg-white aui-padded-b-0 aui-margin-b-5">
+        <div class="goods_money">
+            <span class="money-1">￥360</span>
+            <span class="money-2"><s>￥400</s></span>
+        </div>
+
+        <div class="goods_title">
+            <h3>
+                有益贝符合益生菌颗粒
+            </h3>
+        </div>
+
+        <div class="aui-row goods_description ">
+            <div class="aui-col-xs-4">
+                快递:包邮
+            </div>
+            <div class="aui-col-xs-4 aui-text-center">
+                销量:56
+            </div>
+            <div class="aui-col-xs-4 aui-text-right">
+                江苏省-南京市
+            </div>
+        </div>
+    </div>
+
+    <div class="aui-bg-white goods_info_list">
+        <ul class="aui-list aui-list-in">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">
+                        卡劵
+                    </div>
+                    <div class="aui-list-item-right">
+                        <div>
+                            <span class="border-span">优惠券</span>
+                            满<span class="text-red-1">30</span>减<span class="text-red-1">5</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">
+                        活动
+                    </div>
+                    <div class="aui-list-item-right">
+                        <div>
+                            <span class="border-span">积分</span>
+                            购买赠送<span class="text-red-1">100</span>积分
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="aui-bg-white goods_info_list-1 aui-margin-t-5">
+        <ul class="aui-list aui-list-in">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">
+                        规格 <span class="aui-margin-l-5">内容1</span> <span class="aui-margin-l-5">1件</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="aui-bg-white goods_info_list-3 aui-margin-t-5 page">
+        <div class="aui-padded-15 goods_info">
+            商品详情
+        </div>
+        <div class="aui-margin-15">
+            <span class="bl-1"></span>鼻炎调理课程
+        </div>
+
+        <div class="aui-content-padded">
+            <img src="../images/30.jpg" alt="">
+            <br>
+            <h3>
+                课程详情：
+            </h3>
+            <p>
+                1、报名方式：在线报名，购买成功后工作人员会与您取得联系
+            </p>
+
+            <p>
+                2、课程时长：一节40分钟
+            </p>
+
+            <p>
+                3、适用年龄（年龄分阶）：3周半-8周岁
+            </p>
+
+            <p>
+                4、课程内容（简介）：团体班教学，课程融入多元智能、感官与三元智力的各项创意音乐活动设计，配合肢体的节奏律动、音感训练、乐理学习、音乐欣赏、钢琴合奏与音乐即兴创作，唤醒孩子多元智能潜力与天赋，从而达到综合音乐素养能力的提升。
+            </p>
+
+            <p>
+                5、预约方式：025-5224 2222
+            </p>
+
+            <p>
+                6、使用限制：
+            </p>
+
+            <p>
+                ①购买后即可使用
+            </p>
+
+            <p>
+                ②长期有效
+            </p>
+
+            <br />
+
+            <p>
+                适用门店：
+            </p>
+
+            <p>
+                所有门店
+            </p>
+
+            <p>
+                电话：025-5701 8699
+            </p>
+        </div>
+    </div>
+
+    <!--底部-->
+    <footer class="aui-bar aui-bar-tab aui-border-t home"  id="footer">
+        <div class="aui-bar-tab-item" style="width: 30%;">
+            <img src="../images/36.png" alt="" class="">
+            <!--<i class="aui-iconfont aui-icon-comment aui-text-info"></i>-->
+            <div class="aui-bar-tab-label">商城</div>
+        </div>
+        <div class="aui-bar-tab-item" style="width: 70%;">
+            <div class="bg-img-1 aui-text-white aui-padded-5 aui-margin-r-10">
+                <img src="../images/37.png" alt="">
+
+                <div class="aui-bar-tab-label" data-target="#half" id="btn2">立即购买</div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="half" class='weui-popup__container popup-bottom'>
+        <div class="weui-popup__overlay"></div>
+        <div class="weui-popup__modal aui-bg-white popup-content">
+            <a href="javascript:;" class="picker-button close-popup"></a>
+            <div class="modal-content">
+                <ul class="aui-list aui-media-list aui-padded-15">
+                    <li class="aui-list-item">
+                        <div class="aui-media-list-item-inner">
+                            <div class="aui-list-item-media">
+                                <img src="../images/39.png">
+                            </div>
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-text">
+                                    <div class="aui-list-item-title">￥211</div>
+                                </div>
+                                <div class="aui-list-item-text">
+                                    套餐二, 属性二
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="aui-border-t"></div>
+
+                <div class="aui-content-padded">
+                    <div class="title" v-for="item in list">
+                        {{item.name}}
+                        <div class="sp-1">
+                            <ul>
+                                <li v-for="item2 in item.val">
+                                    <div v-bind:class="{on: item2.action}">{{item2.name}}</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="aui-border-t"></div>
+
+                <div class="aui-padded-15">
+                    <div class="aui-row">
+                        <div class="aui-col-xs-8">
+                            数量
+                        </div>
+                        <div class="aui-col-xs-4">
+                            <div class="weui-count">
+                                <a class="weui-count__btn weui-count__decrease aui-pull-left"></a>
+                                <input class="weui-count__number aui-pull-left" type="number" value="1" />
+                                <a class="weui-count__btn weui-count__increase aui-pull-left"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="aui-content-padded">
+                    <div class="btn">
+                        <div class="aui-btn-home aui-btn aui-btn-block">
+                            确认
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    // vue
+    var example = new Vue({
+        el:'#half',
+        data:{
+            list:[
+                {
+                    'name':'套餐类型',
+                    'val':[
+                        {'name':'套餐一文字内容',isAction:true},
+                        {'name':'套餐一文字内容套餐',isAction:false},
+                        {'name':'套餐一文字内容',isAction:false},
+                    ]
+                },
+                {
+                    'name':'属性类型',
+                    'val':[
+                        {'name':'属性一文字内容',isAction:true},
+                        {'name':'属性二内容',isAction:false}
+                    ]
+                }
+            ],
+
+        },
+        methods:{
+            actClick: function(event){
+                console.log(event);
+            }
+        }
+
+    })
+</script>
+</body>
+</html>

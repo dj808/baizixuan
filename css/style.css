@@ -1,0 +1,576 @@
+/*主色调*/
+/*#1e7e3e*/
+
+html, body {
+    height: 100%;
+    /*overflow-y: auto;*/
+}
+
+.page{
+    padding-bottom: 55px;
+}
+.bl-1{
+    width: 5px;
+    border-left: 5px solid #1e7e3e;
+    margin-right: 0.5rem;
+}
+
+/*字体颜色*/
+.aui-text-666 {
+    color: #666;
+}
+
+/*背景颜色*/
+.bg-img-1{
+    background-image: url("../images/35.png");
+    background-size: 100% 100%;
+
+}
+
+.aui-btn-submit {
+    color: #fff;
+    height: 2.25rem;
+    line-height: 2.3rem;
+    border-radius: 2rem;
+    background: #1e7e3e;
+}
+
+.body-footer {
+    padding-bottom: 2.25rem;
+}
+
+.aui-searchbar input::-webkit-input-placeholder {
+    color: #999;
+}
+
+.aui-searchbar input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #999;
+}
+
+.aui-searchbar input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #999;
+}
+
+.aui-searchbar input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #999;
+}
+
+.aui-header {
+    padding-left: 0.75rem;
+}
+
+.aui-header .aui-info-item {
+    color: #333;
+}
+
+#search {
+    background-color: #1e7e3e;
+}
+
+#search #search-input {
+    width: 85%;
+    margin-left: 0.25rem;
+}
+
+#search.aui-searchbar .aui-iconfont {
+    width: 15%;
+    float: right;
+    font-weight: bold;
+    padding-right: 0.5rem;
+}
+
+#search .aui-searchbar-input {
+    border-radius: 1.25rem;
+}
+
+/*头部图上字下*/
+#qd-1 .qd img {
+    width: 1rem;
+    height: 1rem;
+    margin: 0 auto;
+    margin-top: 0.25rem;
+}
+
+#qd-1 .qd .text-1 {
+    color: #fff;
+    font-size: 0.6rem;
+    line-height: 1rem;
+    text-align: center;
+}
+
+#nv_list img {
+    margin: 0 auto;
+}
+
+.slide .dot span {
+    width: 8px;
+    height: 8px;
+    background: #fff;
+}
+
+.border-radius-1 {
+    border-radius: 0.25rem;
+}
+
+#slide4 {
+    height: 5rem;
+}
+
+#slide4 .dot {
+    position: absolute;
+    bottom: 10px;
+    z-index: 5;
+    font-size: 0;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#tagnav .weui-navigator-list li {
+    width: 7rem;
+}
+
+#tagnav img {
+    width: 100%;
+}
+
+#tagnav .weui-navigator-list li a {
+    padding: 0.25rem;
+}
+
+.weui-navigator {
+    background: none;
+}
+
+.weui-navigator-list li.weui-state-hover, .weui-navigator-list li.weui-state-active a {
+    color: #666;
+}
+
+.weui-navigator-list li.weui-state-hover, .weui-navigator-list li.weui-state-active a:after {
+    display: none;
+}
+
+.list {
+    padding-left: 0.75rem;
+}
+
+.list li {
+    padding-right: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.list-1 {
+    padding-left: 0.75rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.75rem;
+}
+
+.list-1 li {
+    padding-right: 0.25rem;
+}
+
+#goods_list .title {
+    line-height: 2.2rem;
+}
+
+#goods_list .money {
+    color: #ec7c3e;
+    font-size: 0.8rem;
+    font-weight: bold;
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+
+#goods_list .aui-btn-home {
+    border-radius: 1rem;
+    background-color: #ec7c3e;
+    color: #fff;
+    font-size: 0.6rem;
+    width: 100%;
+}
+
+.aui-bar-tab .aui-bar-tab-item .aui-iconfont, .aui-bar-tab .aui-bar-tab-label {
+    display: inline-block;
+}
+
+.icon-footer {
+    width: 2.5rem;
+    margin: 0 auto;
+}
+
+#footer .icon-footer-tab {
+    display: inline-block;
+    position: relative;
+    z-index: 20;
+    top: 0.1rem;
+    background-image: url("../images/icon_01.png");
+    background-size: 100% 100%;
+    width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+}
+
+#footer .icon-footer-tab-my {
+    display: inline-block;
+    position: relative;
+    z-index: 20;
+    top: 0.1rem;
+    background-image: url("../images/icon_03.png");
+    background-size: 100% 100%;
+    width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+}
+
+#footer.aui-bar-tab .aui-active {
+    color: #1e7e3e !important;
+}
+
+#footer.aui-bar-tab .aui-bar-tab-label {
+    font-size: 0.8rem;
+}
+
+#footer .aui-active .icon-footer-tab-my {
+    background-image: url("../images/icon_03_action.png");
+}
+
+#footer .aui-active .icon-footer-tab {
+    background-image: url("../images/icon_01_action.png");
+}
+
+/*登录*/
+.login-bg {
+    background-image: url("../images/28.jpg");
+    background-size: 100% 100%;
+}
+
+.login {
+    border-radius: 0.5rem;
+    background-color: #fff;
+    margin-top: 5rem;
+}
+
+.login_table {
+    border-bottom: #9b9b9b 1px solid;
+}
+
+.login_table .aui-tab {
+    background-color: transparent;
+    padding: 0.5rem;
+}
+
+.login_table .aui-tab-item.aui-active span {
+    border-bottom: 2px solid #1e7e3e;
+}
+
+.login_table .aui-tab-item span {
+    display: inline-block;
+    font-weight: bold;
+    height: 2.7rem;
+    line-height: 2.2rem;
+    position: relative;
+    font-size: 0.7rem;
+}
+
+.login_table .aui-tab-item.aui-active {
+    color: #1e7e3e;
+    border-bottom: none
+}
+
+.login_content .input {
+    background: #f0f0f0;
+    border-radius: 2.2rem;
+    line-height: 2.2rem;
+    height: 2.2rem;
+    padding: 0.75rem;
+}
+
+.login_content input[type=checkbox] {
+    position: relative;
+    top: 2px;
+}
+
+.login_content .input::-webkit-input-placeholder {
+    color: #999;
+}
+
+.login_content .input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #999;
+}
+
+.login_content .input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #999;
+}
+
+.login_content .input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #999;
+}
+
+.login_content .submit {
+    padding: 3rem 0.75rem 4rem 0.75rem;
+}
+
+/*注册*/
+.login_content.register_content .submit {
+    padding: 0.75rem 0.75rem 2.5rem 0.75rem;
+}
+
+.register_content .code {
+    position: relative;
+    background: #f0f0f0;
+    border-radius: 2.2rem;
+}
+
+.register_content .code input[name=code]{
+    width: 60%;
+}
+
+.register_content .code .code-btn{
+    color: #fff;
+    position: absolute;
+    right: 0.75rem;
+    top: 0;
+    font-size: 0.6rem;
+    line-height: 1.25rem;
+    margin: 0.35rem;
+    padding: 0 0.5rem;
+    background: transparent;
+    background-image: url("../images/29.png");
+    background-size: 100% 100%;
+    border: none;
+}
+
+
+/* 课程介绍 */
+.kc-title {
+    line-height: 2.2rem;
+    height: 2.25rem;
+    font-size: 0.8rem;
+    color: #333;
+    margin: 0 0.75rem 0.75rem 0.75rem;
+    border-bottom: #eee 1px solid;
+}
+
+#kc h3{
+    line-height: 1.2rem;
+}
+
+#kc p{
+    font-size: 0.7rem;
+    line-height: 1.2rem;
+}
+
+/* 商品 */
+.goods_screen{
+    background: #1e7e3e;
+    color: #b5c2b9;
+    font-size: 0.7rem;
+    padding: 0.25rem 1rem ;
+}
+
+.goods_screen .search-list.cur{
+    color: #fff;
+}
+
+.goods_screen .arr {
+
+}
+
+.goods_screen .arrUp {
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-bottom-color: #ccc;
+    /*cursor: pointer;*/
+}
+
+.goods_screen .arrUp.action {
+    border-bottom-color: #fff;
+}
+
+.goods_screen .arrDown {
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top-color: #ccc;
+    margin-top: 2px;
+}
+
+.goods_screen .arrDown.action {
+    border-top-color: #fff;
+}
+
+.goods_swipe #slide2{
+    height: 5rem;
+}
+
+.share_title{
+    color: #333;
+    line-height: 1.25rem;
+    height: 2.5rem;
+}
+
+#goods_list_tpl h3{
+    color: #e42e2e;
+    line-height: 1.4rem;
+}
+
+#goods_list_tpl .aui-btn-home{
+    border-radius: 30px;
+    background: transparent;
+    background-image: url("../images/29.png");
+    background-size: 100% 100%;
+    border: none;
+    color: #fff;
+    line-height: 1.4rem;
+    height: 1.4rem;
+    width: 100%;
+}
+
+
+/*商品详情*/
+.goods_money .money-1{
+    font-size: 1.25rem;
+    color: #e42e2e;
+}
+
+.goods_money .money-2{
+    color: #ccc;
+}
+
+.goods_title h3{
+    color: #333;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    height: 1.5rem;
+}
+
+.goods_description {
+    color: #999;
+    font-size: 0.7rem;
+    line-height: 1.5rem;
+}
+
+.goods_info_list .aui-list .aui-list-item-inner{
+    display: inline-block;
+}
+
+.goods_info_list .aui-list .aui-list-item-title, .goods_info_list .aui-list .aui-list-item-right{
+    display: inline-block;
+    line-height: 2.2rem;
+}
+
+.goods_info_list .border-span{
+    border: #e95252 1px solid;
+    border-radius: 0.25rem;
+    color: #e95252;
+    font-size: 0.6rem;
+    padding: 1px 3px;
+}
+
+.text-red-1{
+    color: #e95252;
+}
+.goods_info {
+    background: #e9e9e9;
+}
+
+.home img{
+    width: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+.home .aui-bar-tab-label{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.popup-content .close-popup{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-image: url("../images/38.png");
+    background-size: 100% 100%;
+    width: 1.25rem;
+    height:1.25rem;
+}
+
+#half .weui-popup__modal{
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+#half .modal-content{
+    padding-top: 0;
+
+}
+
+.modal-content .aui-list,.modal-content .aui-list .aui-list-item{
+    background: none;
+}
+
+.sp-1 ul{
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.sp-1 ul li div{
+    float: left;
+    padding: 0 0.5rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.25rem;
+    margin-right: 0.25rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    color: #999;
+    font-size: 0.7rem;
+    line-height: 1.3rem;
+}
+.sp-1 ul li div.on{
+    background: #ffecd1;
+    border: #f2cb94 1px solid;
+    color: #333;
+}
+#half .aui-col-xs-8{
+    line-height: 1.5rem;
+}
+#half .weui-count{
+    height: 1.5rem;
+}
+#half .weui-count .weui-count__number{
+    width: 1.8rem;
+    height: 1.5rem;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+
+}
+#half .weui-count .weui-count__btn{
+    border: none;
+    background: #eee;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 0;
+}
+#half .weui-count .weui-count__decrease{
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+#half .weui-count .weui-count__increase{
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+#half .weui-count .weui-count__btn:after,#half .weui-count .weui-count__btn:before{
+    background-color: #666;
+}
+#half .btn{
+    margin: 0 2rem;
+}
+#half .aui-btn-home{
+    background: transparent;
+    background-image: url("../images/40.png");
+    background-size: 100% 100%;
+    color: #fff;
+    line-height: 2rem;
+    height: 2rem;
+}
